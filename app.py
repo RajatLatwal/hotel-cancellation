@@ -23,7 +23,7 @@ def prediction(input_list):
 def main():
     st.title("INN HOTEL GROUP")
     lt = st.text_input("Enter the lead time in days")
-    mkt = (lambda x:1 if x=="Online" else 0)st.selectbox("How the booking was made" , ["Online" , "Offline"])
+    mkt = (lambda x:1 if x=="Online" else 0)(st.selectbox("How the booking was made" , ["Online" , "Offline"])
     price = st.text_input("Enter the price of the room")
     adult = st.selectbox("How many adults" , [1,2,3,4])
     arr_m = st.slider("What is the month of arrival?", min_value = 1 , max_value = 2 , step = 1)
@@ -33,7 +33,7 @@ def main():
                   3 if x=="Thur" else
                   4 if x=="Fri" else
                   5 if x=="Sat" else
-                  6 if x=="Sun")
+                  6)
     arr_w = week_lambda(st.selectbox("What is the weekday of arrival" , ["Mon" , "Tue" , "Wed" , "Thur" , "Fri" , "Sat"]))
     dep_w = week_lambda(st.selectbox("What is the weekday of departure" , ["Mon" , "Tue" , "Wed" , "Thur" , "Fri" , "Sat"]))
     weekn = st.text_input("Enter the no of week nights in stay")
