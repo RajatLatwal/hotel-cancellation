@@ -47,7 +47,9 @@ def main():
     spcl = int(st.selectbox("How many special requests have been made", [0, 1, 2, 3, 4, 5]))
 
     # Transform lead time and price
-    lt_t, price_t = transformer.transform([[lt, price]])[0]
+    lt_price_df = pd.DataFrame({"lead_time": [lt], "price": [price]})
+    lt_t, price_t = transformer.transform(lt_price_df)[0]
+
 
     # Final input list (12 features)
     inp_list = [lt_t, spcl, price_t, adult, wkndn, park, weekn, mkt, arr_m, arr_w, totan, dep_w]
