@@ -36,7 +36,7 @@ def prediction(input_list):
 
 # Streamlit UI
 def main():
-    st.title('INN HOTEL GROUP')
+    st.title('🏨 INN HOTEL GROUP')
 
     # User input fields (clean, empty by default)
     lt = st.text_input('Enter the lead time in days')
